@@ -12,7 +12,7 @@
       function draw(data){
         div.selectAll("div").data(data).enter().append("div")
            .append("span")
-           .text(function(d){return d.l;})
+           //.text(function(d){return d.l;})
         div.selectAll("div").data(data)
            .append("svg")
            .attr("height",height)
