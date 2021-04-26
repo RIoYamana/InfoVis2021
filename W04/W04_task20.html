@@ -8,7 +8,7 @@
       var div = d3.select("body");
       var height =20 ;
       var padding =10;
-      d3.csv("https://rioyamana.github.io/InfoVis2021/W04/w04_task1.csv",draw);
+      d3.csv("https://rioyamana.github.io/InfoVis2021/W04/W04_task.csv",draw);
       function draw(data){
         div.selectAll("div").data(data).enter().append("div")
            .append("span")
