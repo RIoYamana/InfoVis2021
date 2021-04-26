@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>W04: Task2</title>
+  </head>
+  <body>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+      var div = d3.select("body");
+      var height =20 ;
+      var padding =10;
+      d3.csv("https://rioyamana.github.io/InfoVis2021/W04/data.csv",draw);
+      function draw(data){
+      div.selectAll("div").data(data).enter().append("div")
+         .append("span")
+         .text(function(d){return d.l;})
+      div.selectAll("div").data(data)
+         .append("svg")
+         .append("rect")
+         .attr("x",padding)
+         .attr("y",function(d,i){return padding+i*(height+padding);})
+         .attr("height",height)
+         .attr("width",function(d){return d.w;})
+       };
+    </script>
+  </body>
+</html>

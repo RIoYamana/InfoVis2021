@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>W04: Task2</title>
+  </head>
+  <body>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+      var div = d3.select("body");
+      var data = [
+        {w:100, l:"a"},
+        {w:200, l:"b"},
+        {w:300, l:"c"}];
+      var height =20 ;
+      var padding =10;
+
+      div.selectAll("div").data(data).enter().append("div")
+         .append("span")
+         .text(function(d){return d.l;})
+      div.selectAll("div").data(data)
+         .append("svg")
+         .attr("height",height)
+         .append("rect")
+         .attr("x",padding)
+         .attr("y",function(d,i){return 0;})
+         .attr("height",height)
+         .attr("width",function(d){return d.w;})
+
+    </script>
+  </body>
+</html>
